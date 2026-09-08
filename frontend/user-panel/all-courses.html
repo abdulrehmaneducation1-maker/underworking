@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Explore practical online courses on Learnify by NextWave Commerce."
+    >
+
+    <title>All Courses | Learnify</title>
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         PAGE CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="all-courses.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="courses-header">
+
+    <div class="header-left">
+
+
+        <!-- =================================================
+             BACK BUTTON
+        ================================================== -->
+
+        <button
+            type="button"
+            class="back-button"
+            id="backButton"
+            aria-label="Back to dashboard"
+        >
+<a
+            href="user-panel.html"
+           
+        >
+            <i
+                class="fa-solid fa-arrow-left"
+                aria-hidden="true"
+            ></i>
+
+        </button>
+
+
+        <!-- =================================================
+             BRAND
+        ================================================== -->
+
+        <a
+            href="user-panel.html"
+            class="brand"
+            aria-label="Learnify Dashboard"
+        >
+
+            <div class="brand-icon">
+
+                <i
+                    class="fa-solid fa-graduation-cap"
+                    aria-hidden="true"
+                ></i>
+
+            </div>
+
+
+            <div class="brand-text">
+
+                <strong>
+                    Learnify
+                </strong>
+
+                <span>
+                    by NextWave Commerce
+                </span>
+
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <!-- =====================================================
+         HEADER RIGHT
+    ====================================================== -->
+
+    <div class="header-right">
+
+
+        <!-- =================================================
+             SEARCH
+        ================================================== -->
+
+        <div class="course-search">
+
+            <i
+                class="fa-solid fa-magnifying-glass"
+                aria-hidden="true"
+            ></i>
+
+            <input
+                type="search"
+                id="courseSearch"
+                placeholder="Search courses..."
+                autocomplete="off"
+                aria-label="Search courses"
+            >
+
+        </div>
+
+
+
+        <!-- =================================================
+             PROFILE
+        ================================================== -->
+
+
+
+
+</header>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="courses-main">
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="courses-hero">
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+
+                <i
+                    class="fa-solid fa-book-open"
+                    aria-hidden="true"
+                ></i>
+
+                Learnify Courses
+
+            </span>
+
+
+            <h1>
+
+                Learn Skills That
+
+                <span>
+                    Build Your Future
+                </span>
+
+            </h1>
+
+
+            <p>
+                Explore our practical courses and
+                learn valuable skills step by step.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         COURSES SECTION
+    ====================================================== -->
+
+    <section
+        class="courses-section"
+        aria-labelledby="allCoursesHeading"
+    >
+
+
+        <!-- =================================================
+             SECTION HEADING
+        ================================================== -->
+
+        <div class="section-heading">
+
+            <div>
+
+                <span>
+                    EXPLORE COURSES
+                </span>
+
+                <h2 id="allCoursesHeading">
+                    All Courses
+                </h2>
+
+            </div>
+
+
+            <!-- COURSE COUNT -->
+
+            <div class="course-count">
+
+                <strong id="courseCount">
+                    0
+                </strong>
+
+                <span>
+                    Courses
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             COURSE GRID
+        ================================================== -->
+
+        <div
+            class="courses-grid"
+            id="coursesGrid"
+            aria-live="polite"
+        >
+
+            <!--
+                Courses are loaded dynamically
+                from Firestore by all-courses.js.
+            -->
+
+        </div>
+
+
+        <!-- =================================================
+             LOADING STATE
+
+             Kept in HTML for future use.
+             JavaScript currently does not display
+             a loading screen.
+        ================================================== -->
+
+        <div
+            class="courses-loading"
+            id="coursesLoading"
+            hidden
+        >
+
+            <div class="loading-spinner">
+
+                <i
+                    class="fa-solid fa-spinner fa-spin"
+                    aria-hidden="true"
+                ></i>
+
+            </div>
+
+            <p>
+                Loading courses...
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             NO COURSES
+        ================================================== -->
+
+        <div
+            class="no-courses"
+            id="noCourses"
+            hidden
+        >
+
+            <div class="no-courses-icon">
+
+                <i
+                    class="fa-solid fa-book-open"
+                    aria-hidden="true"
+                ></i>
+
+            </div>
+
+
+            <h3>
+                No courses available
+            </h3>
+
+
+            <p>
+                There are currently no active courses available.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             EMPTY SEARCH
+        ================================================== -->
+
+        <div
+            class="no-results"
+            id="noResults"
+            hidden
+        >
+
+            <div class="no-results-icon">
+
+                <i
+                    class="fa-solid fa-magnifying-glass"
+                    aria-hidden="true"
+                ></i>
+
+            </div>
+
+
+            <h3>
+                No courses found
+            </h3>
+
+
+            <p>
+                Try searching for another course.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================================
+     COURSE DETAILS MODAL
+========================================================= -->
+
+<div
+    class="course-modal"
+    id="courseModal"
+    hidden
+>
+
+
+    <!-- =====================================================
+         MODAL OVERLAY
+    ====================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="courseModalOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         MODAL BOX
+    ====================================================== -->
+
+    <div
+        class="course-modal-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalCourseTitle"
+    >
+
+
+        <!-- =================================================
+             CLOSE BUTTON
+        ================================================== -->
+
+        <button
+            type="button"
+            class="modal-close"
+            id="closeCourseModal"
+            aria-label="Close course details"
+        >
+
+            <i
+                class="fa-solid fa-xmark"
+                aria-hidden="true"
+            ></i>
+
+        </button>
+
+
+        <!-- =================================================
+             COURSE IMAGE
+        ================================================== -->
+
+        <div class="modal-course-image">
+
+            <img
+                id="modalCourseImage"
+                src=""
+                alt="Course"
+            >
+
+
+            <span
+                class="modal-course-category"
+                id="modalCourseCategory"
+            >
+                Course
+            </span>
+
+        </div>
+
+
+        <!-- =================================================
+             COURSE CONTENT
+        ================================================== -->
+
+        <div class="modal-course-content">
+
+
+            <!-- TITLE -->
+
+            <h2 id="modalCourseTitle">
+                Course
+            </h2>
+
+
+            <!-- DESCRIPTION -->
+
+            <p
+                class="modal-course-description"
+                id="modalCourseDescription"
+            >
+                Course description
+            </p>
+
+
+            <!-- =================================================
+                 COURSE META
+            ================================================== -->
+
+            <div class="modal-course-meta">
+
+
+                <!-- LESSONS -->
+
+                <div>
+
+                    <i
+                        class="fa-solid fa-book"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Lessons
+                    </span>
+
+                    <strong id="modalLessons">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <!-- DURATION -->
+
+                <div>
+
+                    <i
+                        class="fa-solid fa-clock"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Duration
+                    </span>
+
+                    <strong id="modalDuration">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <!-- INSTRUCTOR -->
+
+                <div>
+
+                    <i
+                        class="fa-solid fa-user"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Instructor
+                    </span>
+
+                    <strong id="modalInstructor">
+                        Learnify
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 STUDENT FEEDBACK
+            ================================================== -->
+
+            <div class="feedback-section">
+
+
+                <!-- FEEDBACK HEADING -->
+
+                <div class="feedback-heading">
+
+                    <div>
+
+                        <span>
+                            STUDENT FEEDBACK
+                        </span>
+
+                        <h3>
+                            What Students Say
+                        </h3>
+
+                    </div>
+
+
+                    <!-- AVERAGE RATING -->
+
+                    <div class="average-rating">
+
+                        <strong
+                            id="averageRating"
+                            aria-label="Average rating"
+                        >
+                            0.0
+                        </strong>
+
+                        <div
+                            class="rating-stars"
+                            id="averageStars"
+                            aria-label="Course rating"
+                        >
+                            ☆☆☆☆☆
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     FEEDBACK LIST
+                ================================================== -->
+
+                <div
+                    class="feedback-list"
+                    id="feedbackList"
+                    aria-live="polite"
+                >
+
+                    <!--
+                        Firebase feedback will appear here.
+                    -->
+
+                </div>
+
+
+                <!-- =================================================
+                     NO FEEDBACK
+                ================================================== -->
+
+                <div
+                    class="no-feedback"
+                    id="noFeedback"
+                    hidden
+                >
+
+                    <i
+                        class="fa-regular fa-comment-dots"
+                        aria-hidden="true"
+                    ></i>
+
+                    <p>
+                        No student feedback yet.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 PURCHASE AREA
+            ================================================== -->
+
+            <div class="purchase-area">
+
+
+                <!-- PRICE -->
+
+                <div class="purchase-price">
+
+                    <span>
+                        Course Price
+                    </span>
+
+                    <strong id="modalCoursePrice">
+                        Rs. 0
+                    </strong>
+
+                </div>
+
+
+                <!-- BUY NOW -->
+
+                <button
+                    type="button"
+                    class="buy-now-button"
+                    id="buyNowButton"
+                >
+
+                    <span>
+
+                        <i
+                            class="fa-solid fa-cart-shopping"
+                            aria-hidden="true"
+                        ></i>
+
+                        Buy Now
+
+                    </span>
+
+                    <i
+                        class="fa-solid fa-arrow-right"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     LOGIN REQUIRED MODAL
+========================================================= -->
+
+<div
+    class="login-required-modal"
+    id="loginRequiredModal"
+    hidden
+>
+
+
+    <!-- =====================================================
+         LOGIN MODAL BOX
+    ====================================================== -->
+
+    <div
+        class="login-required-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="loginRequiredTitle"
+    >
+
+
+        <!-- CLOSE -->
+
+        <button
+            type="button"
+            class="modal-close"
+            id="closeLoginModal"
+            aria-label="Close login required message"
+        >
+
+            <i
+                class="fa-solid fa-xmark"
+                aria-hidden="true"
+            ></i>
+
+        </button>
+
+
+        <!-- ICON -->
+
+        <div class="login-required-icon">
+
+            <i
+                class="fa-solid fa-lock"
+                aria-hidden="true"
+            ></i>
+
+        </div>
+
+
+        <!-- TITLE -->
+
+        <h2 id="loginRequiredTitle">
+            Login Required
+        </h2>
+
+
+        <!-- MESSAGE -->
+
+        <p>
+            Please sign in to your Learnify account
+            before purchasing a course.
+        </p>
+
+
+        <!-- ACTIONS -->
+
+        <div class="login-required-actions">
+
+
+            <!-- CANCEL -->
+
+            <button
+                type="button"
+                class="secondary-button"
+                id="cancelLoginRequired"
+            >
+                Cancel
+            </button>
+
+
+            <!-- SIGN IN -->
+
+            <button
+                type="button"
+                class="primary-button"
+                id="goToLoginButton"
+            >
+                Sign In
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+      <div class="page-loader" id="pageLoader">
+    <div class="loader-logo"><i class="fa-solid fa-graduation-cap"></i></div>
+    <div class="loader-spinner"></div>
+    <p>Loading Learnify...</p>
+</div>
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+
+<a
+    href="https://wa.me/923413231540"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="toast"
+   
+    role="status"
+    aria-live="polite"
+>
+    <i
+        class="fa-solid fa-circle-check"
+        
+        aria-hidden="true"
+    ></i>
+
+    <span >
+        Message
+    </span>
+</a>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script
+    type="module"
+    src="all-courses.js"
+></script>
+
+
+</body>
+</html>
+

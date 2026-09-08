@@ -1,0 +1,1450 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Learn new skills with premium online courses, expert instructors, and a powerful learning platform."
+    >
+
+    <meta
+        name="theme-color"
+        content="#0F766E"
+    >
+
+    <title>Learnify — Learn. Grow. Succeed.</title>
+
+    <!-- Google Font -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main stylesheet -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+<style>
+/* =========================
+   SERVICES
+========================= */
+.services-section {
+    padding: 100px 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 45px;
+}
+
+.service-card {
+    padding: 28px 22px;
+    border: 1px solid var(--border-color, #e5e7eb);
+    border-radius: 18px;
+    background: var(--card-bg, #ffffff);
+    box-shadow: 0 10px 30px rgba(15, 118, 110, 0.07);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(15, 118, 110, 0.13);
+}
+/* =========================================================
+  icon
+  
+   ========================================================= */
+
+.active-icon {
+    color: #14b8a6;
+}
+
+.service-icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: rgba(15, 118, 110, .10);
+    color: #0f766e;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    margin: 0 0 10px;
+}
+
+.service-card p {
+    margin: 0 0 18px;
+    line-height: 1.65;
+    opacity: .78;
+}
+
+.service-link {
+    color: #0f766e;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+@media (max-width: 1100px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+    <!-- =========================
+         PAGE LOADER
+    ========================== -->
+
+    <div
+        class="page-loader"
+        id="pageLoader"
+        aria-hidden="true"
+    >
+        <div class="loader-spinner"></div>
+        <span>Loading...</span>
+    </div>
+
+
+    <!-- =========================
+         HEADER / NAVIGATION
+    ========================== -->
+
+    <header class="site-header" id="siteHeader">
+
+        <div class="container nav-container">
+
+            <!-- Logo -->
+
+            <a
+                href="index.html"
+                class="brand"
+                aria-label="Learnify Home"
+            >
+                <span class="brand-icon">
+                  <img src="assets/hearder  logo.png" alt="NextWave Commerce Logo" width="40" height="40" style="border-radius: 20%;">
+                </span>
+
+                <span class="brand-text">
+                    NextWave<span> Commerce</span>
+                </span>
+            </a>
+
+
+            <!-- Desktop Navigation -->
+
+            <nav
+                class="main-navigation"
+                id="mainNavigation"
+                aria-label="Main navigation"
+            >
+                <a
+                    href="#home"
+                    class="nav-link active"
+                >            <i class="fa-solid fa-house active-icon"></i>
+
+                    Home
+                </a>
+
+                <a
+                    href="#courses"
+                    class="nav-link"
+                >            <i class="fa-solid fa-book-open active-icon" ></i> 
+
+                    Courses
+                </a>
+
+                <a
+                    href="#categories"
+                    class="nav-link"
+                >        <i class="fa-solid fa-layer-group  active-icon"></i>
+
+                    Categories
+                </a>
+
+                <a
+                    href="#services"
+                    class="nav-link"
+                >            <i class="fa-solid fa-briefcase active-icon"></i> 
+
+                    Services
+                </a>
+
+                <a
+                    href="#instructors"
+                    class="nav-link"
+                >            <i class="fa-solid fa-chalkboard-user  active-icon"></i>
+
+                    Instructors
+                </a>
+
+                <a
+                    href="#about"
+                    class="nav-link"
+                >        <i class="fa-solid fa-circle-info active-icon"></i> 
+
+                    About
+                </a>
+            </nav>
+
+
+            <!-- Navigation Actions -->
+
+            <div class="nav-actions">
+
+                <button
+                    type="button"
+                    class="theme-toggle"
+                    id="themeToggle"
+                    aria-label="Toggle dark mode"
+                    title="Toggle theme"
+                >
+                    <span class="theme-icon">☾</span>
+                </button>
+
+                
+
+                <a
+                    href="user-panel/user-panel.html?register=true"
+                    class="btn btn-primary signup-btn"
+                >
+                    Get Started
+                </a>
+
+            </div>
+
+
+            <!-- Mobile Menu Button -->
+
+            <button
+                type="button"
+                class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MOBILE NAVIGATION
+    ========================== -->
+
+    <div
+        class="mobile-navigation"
+        id="mobileNavigation"
+    >
+
+        <a href="#home" class="mobile-nav-link">
+            <i class="fa-solid fa-house active-icon"></i>
+            Home
+        </a>
+
+        <a href="#courses" class="mobile-nav-link">
+            <i class="fa-solid fa-book-open active-icon" ></i> 
+            Courses
+        </a>
+
+        <a href="#categories" class="mobile-nav-link">
+        <i class="fa-solid fa-layer-group  active-icon"></i>
+            Categories
+        </a>
+
+        <a href="#services" class="mobile-nav-link">
+
+            <i class="fa-solid fa-briefcase active-icon"></i> 
+            Services
+        </a>
+
+        <a href="#instructors" class="mobile-nav-link">
+
+            <i class="fa-solid fa-chalkboard-user  active-icon"></i>
+            Instructors
+        </a>
+
+        <a href="#about" class="mobile-nav-link">
+
+        <i class="fa-solid fa-circle-info active-icon"></i> 
+            About
+        </a>
+
+        <div class="mobile-nav-actions">
+
+            <a
+                href="user-panel/user-panel.html"
+                class="btn btn-outline"
+            >
+                Login
+            </a>
+
+            <a
+                href="user-panel/user-panel.html?register=true"
+                class="btn btn-primary"
+            >
+                Get Started
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <main>
+
+        <!-- =========================
+             HERO SECTION
+        ========================== -->
+
+        <section
+            class="hero-section"
+            id="home"
+        >
+
+            <div class="hero-background-shape shape-one"></div>
+            <div class="hero-background-shape shape-two"></div>
+
+            <div class="container hero-container">
+
+                <div class="hero-content">
+
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        Learn from industry experts
+                    </div>
+
+                    <h1>
+                        Build Your Future
+                        <span>One Skill</span>
+                        at a Time.
+                    </h1>
+
+                    <p>
+                        Discover practical courses designed to help you
+                        learn valuable skills, grow your career, and achieve
+                        your goals from anywhere.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#courses"
+                            class="btn btn-primary btn-large"
+                        >
+                            Explore Courses
+                            <span>→</span>
+                        </a>
+
+                        <a
+                            href="#categories"
+                            class="btn btn-light btn-large"
+                        >
+                            Browse Categories
+                        </a>
+
+                    </div>
+
+
+                    <!-- Hero Stats -->
+
+                    <div class="hero-stats">
+
+                        <div class="hero-stat">
+                            <strong>10K+</strong>
+                            <span>Students</span>
+                        </div>
+
+                        <div class="hero-stat">
+                            <strong>250+</strong>
+                            <span>Courses</span>
+                        </div>
+
+                        <div class="hero-stat">
+                            <strong>50+</strong>
+                            <span>Instructors</span>
+                        </div>
+
+                        <div class="hero-stat">
+                            <strong>4.9</strong>
+                            <span>Average Rating</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Hero Visual -->
+
+                <div class="hero-visual">
+
+                    <div class="hero-card main-learning-card">
+
+                        <div class="learning-card-header">
+
+                            <div>
+                                <span class="small-label">
+                                    Continue Learning
+                                </span>
+
+                                <h3>
+                                    Web Development
+                                </h3>
+                            </div>
+
+                            <div class="course-icon">
+                                &lt;/&gt;
+                            </div>
+
+                        </div>
+
+
+                        <div class="progress-area">
+
+                            <div class="progress-info">
+                                <span>Course Progress</span>
+                                <strong>72%</strong>
+                            </div>
+
+                            <div class="progress-bar">
+                                <span style="width: 72%;"></span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="learning-footer">
+
+                            <span>
+                                18 of 25 lessons
+                            </span>
+
+                            <button
+                                type="button"
+                                class="continue-btn"
+                            >
+                                Continue →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Floating Card -->
+
+                    <div class="floating-card students-card">
+
+                        <div class="floating-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+
+                        <div>
+                            <strong>10,000+</strong>
+                            <span>Active Students</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="floating-card rating-card">
+
+                        <div class="rating-stars">
+                            ★★★★★
+                        </div>
+
+                        <strong>
+                            4.9/5
+                        </strong>
+
+                        <span>
+                            Student Rating
+                        </span>
+
+                    </div>
+
+
+                    <!-- Decorative Circle -->
+
+                    <div class="hero-circle">
+
+                        <div class="circle-content">
+                            <span>LEARN</span>
+                            <strong>∞</strong>
+                            <span>GROW</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+<!-- =========================
+                   CATEGORIES
+        ========================== -->
+
+
+        <section
+            class="section categories-section"
+            id="categories"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">
+                            Explore
+                        </span>
+
+                        <h2>
+                            Learn What You Love
+                        </h2>
+                    </div>
+
+                    <a
+                        href="#courses"
+                        class="text-link"
+                    >
+                        View all categories →
+                    </a>
+
+                </div>
+
+
+                <div class="categories-grid">
+
+                    <a
+                        href="#courses"
+                        class="category-card"
+                    >
+                        <div class="category-icon">
+                            💻
+                        </div>
+
+                        <h3>
+                            Development
+                        </h3>
+
+                        <p>
+                            48 Courses
+                        </p>
+                    </a>
+
+
+                    <a
+                        href="#courses"
+                        class="category-card"
+                    >
+                        <div class="category-icon">
+                            🎨
+                        </div>
+
+                        <h3>
+                            Design
+                        </h3>
+
+                        <p>
+                            36 Courses
+                        </p>
+                    </a>
+
+
+                    <a
+                        href="#courses"
+                        class="category-card"
+                    >
+                        <div class="category-icon">
+                            📊
+                        </div>
+
+                        <h3>
+                            Business
+                        </h3>
+
+                        <p>
+                            42 Courses
+                        </p>
+                    </a>
+
+
+                    <a
+                        href="#courses"
+                        class="category-card"
+                    >
+                        <div class="category-icon">
+                            📱
+                        </div>
+
+                        <h3>
+                            Marketing
+                        </h3>
+
+                        <p>
+                            29 Courses
+                        </p>
+                    </a>
+
+
+                    <a
+                        href="#courses"
+                        class="category-card"
+                    >
+                        <div class="category-icon">
+                            📸
+                        </div>
+
+                        <h3>
+                            Photography
+                        </h3>
+
+                        <p>
+                            24 Courses
+                        </p>
+                    </a>
+
+
+                    <a
+                        href="#courses"
+                        class="category-card"
+                    >
+                        <div class="category-icon">
+                            🧠
+                        </div>
+
+                        <h3>
+                            Personal Growth
+                        </h3>
+
+                        <p>
+                            31 Courses
+                        </p>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+x
+        <!-- =========================
+             SERVICES
+        ========================== -->
+        <section class="section services-section" id="services">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">What We Offer</span>
+                        <h2>Our <span>Services</span></h2>
+                    </div>
+                    <p>
+                        Everything you need to learn practical skills and grow.
+                    </p>
+                </div>
+
+                <div class="services-grid">
+
+                    <article class="service-card">
+                        <div class="service-icon">🎓</div>
+                        <h3>Online Learning</h3>
+                        <p>Learn practical skills through structured online courses.</p>
+                        <a href="#courses" class="service-link">Explore Courses →</a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">📜</div>
+                        <h3>Certificates</h3>
+                        <p>Earn certificates after successfully completing eligible courses.</p>
+                        <a href="#courses" class="service-link">View Courses →</a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">👨‍🏫</div>
+                        <h3>Expert Instructors</h3>
+                        <p>Learn from experienced instructors with practical knowledge.</p>
+                        <a href="#instructors" class="service-link">Meet Instructors →</a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h3>Progress Tracking</h3>
+                        <p>Track your lessons, course progress and learning achievements.</p>
+                        <a href="user-panel/user-panel.html" class="service-link">My Learning →</a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">💼</div>
+                        <h3>Career Skills</h3>
+                        <p>Build job-ready skills that you can use in real-world projects.</p>
+                        <a href="#courses" class="service-link">Start Learning →</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+             FEATURED COURSES
+        ========================== -->
+
+        <section
+            class="section courses-section"
+            id="courses"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">
+                            Popular Courses
+                        </span>
+
+                        <h2>
+                            Start Learning Today
+                        </h2>
+                    </div>
+
+                    <a
+                        href="#courses"
+                        class="text-link"
+                    >
+                        View all courses →
+                    </a>
+
+                </div>
+
+
+                <div class="courses-grid">
+
+                    <!-- Course 1 -->
+
+                    <article class="course-card">
+
+                        <div class="course-thumbnail development-bg">
+
+                            <span class="course-category">
+                                Development
+                            </span>
+
+                            <div class="thumbnail-code">
+                                &lt;/&gt;
+                            </div>
+
+                        </div>
+
+                        <div class="course-content">
+
+                            <div class="course-rating">
+                                <span>★★★★★</span>
+                                <small>
+                                    4.9 (1.2k)
+                                </small>
+                            </div>
+
+                            <h3>
+                                Complete Web Development Bootcamp
+                            </h3>
+
+                            <p>
+                                Learn HTML, CSS, JavaScript and modern
+                                development from scratch.
+                            </p>
+
+                            <div class="course-meta">
+                                <span>👤 8,240 students</span>
+                                <span>⏱ 24 hours</span>
+                            </div>
+
+                            <div class="course-bottom">
+
+                                <strong class="course-price">
+                                    $49
+                                </strong>
+
+                                <a
+                                    href="user-panel/user-panel.html"
+                                    class="course-btn"
+                                >
+                                    View Course
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Course 2 -->
+
+                    <article class="course-card">
+
+                        <div class="course-thumbnail design-bg">
+
+                            <span class="course-category">
+                                Design
+                            </span>
+
+                            <div class="thumbnail-code">
+                                ✦
+                            </div>
+
+                        </div>
+
+                        <div class="course-content">
+
+                            <div class="course-rating">
+                                <span>★★★★★</span>
+                                <small>
+                                    4.8 (850)
+                                </small>
+                            </div>
+
+                            <h3>
+                                UI/UX Design Masterclass
+                            </h3>
+
+                            <p>
+                                Create beautiful interfaces and meaningful
+                                user experiences.
+                            </p>
+
+                            <div class="course-meta">
+                                <span>👤 5,120 students</span>
+                                <span>⏱ 18 hours</span>
+                            </div>
+
+                            <div class="course-bottom">
+
+                                <strong class="course-price">
+                                    $39
+                                </strong>
+
+                                <a
+                                    href="user-panel/user-panel.html"
+                                    class="course-btn"
+                                >
+                                    View Course
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Course 3 -->
+
+                    <article class="course-card">
+
+                        <div class="course-thumbnail business-bg">
+
+                            <span class="course-category">
+                                Business
+                            </span>
+
+                            <div class="thumbnail-code">
+                                ↗
+                            </div>
+
+                        </div>
+
+                        <div class="course-content">
+
+                            <div class="course-rating">
+                                <span>★★★★★</span>
+                                <small>
+                                    4.9 (620)
+                                </small>
+                            </div>
+
+                            <h3>
+                                Digital Business & Marketing
+                            </h3>
+
+                            <p>
+                                Learn how to build, market, and grow an
+                                online business.
+                            </p>
+
+                            <div class="course-meta">
+                                <span>👤 3,980 students</span>
+                                <span>⏱ 15 hours</span>
+                            </div>
+
+                            <div class="course-bottom">
+
+                                <strong class="course-price">
+                                    $35
+                                </strong>
+
+                                <a
+                                    href="user-panel/user-panel.html"
+                                    class="course-btn"
+                                >
+                                    View Course
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             WHY CHOOSE US
+        ========================== -->
+
+        <section
+            class="section benefits-section"
+            id="about"
+        >
+
+            <div class="container benefits-container">
+
+                <div class="benefits-content">
+
+                    <span class="section-label">
+                        Why Learnify?
+                    </span>
+
+                    <h2>
+                        Everything You Need to
+                        <span>Learn Better.</span>
+                    </h2>
+
+                    <p>
+                        We make online learning simple, practical, and
+                        accessible. Learn at your own pace with courses
+                        created by people who know the industry.
+                    </p>
+
+
+                    <div class="benefit-list">
+
+                        <div class="benefit-item">
+
+                            <div class="benefit-icon">
+                                ✓
+                            </div>
+
+                            <div>
+                                <h3>
+                                    Learn at Your Own Pace
+                                </h3>
+
+                                <p>
+                                    Study whenever and wherever you want.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="benefit-item">
+
+                            <div class="benefit-icon">
+                                ✓
+                            </div>
+
+                            <div>
+                                <h3>
+                                    Expert Instructors
+                                </h3>
+
+                                <p>
+                                    Learn directly from experienced
+                                    professionals.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="benefit-item">
+
+                            <div class="benefit-icon">
+                                ✓
+                            </div>
+
+                            <div>
+                                <h3>
+                                    Certificates
+                                </h3>
+
+                                <p>
+                                    Earn certificates when you complete
+                                    your courses.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="benefits-visual">
+
+                    <div class="achievement-card">
+
+                        <div class="achievement-top">
+                            <span>
+                                Your Learning
+                            </span>
+
+                            <span class="achievement-menu">
+                                •••
+                            </span>
+                        </div>
+
+
+                        <div class="achievement-circle">
+
+                            <div>
+                                <strong>
+                                    84%
+                                </strong>
+
+                                <span>
+                                    Complete
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="achievement-info">
+
+                            <h3>
+                                Keep Going!
+                            </h3>
+
+                            <p>
+                                You're making great progress this week.
+                            </p>
+
+                        </div>
+
+
+                        <div class="mini-progress">
+                            <span style="width: 84%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="mini-stat-card">
+
+                        <span class="mini-stat-icon">
+                            🏆
+                        </span>
+
+                        <div>
+                            <strong>
+                                25,000+
+                            </strong>
+
+                            <span>
+                                Certificates Earned
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INSTRUCTORS
+        ========================== -->
+
+        <section
+            class="section instructors-section"
+            id="instructors"
+        >
+
+            <div class="container">
+
+                <div class="section-heading centered-heading">
+
+                    <span class="section-label">
+                        Meet Our Experts
+                    </span>
+
+                    <h2>
+                        Learn From The Best
+                    </h2>
+
+                    <p>
+                        Experienced professionals helping you build
+                        real-world skills.
+                    </p>
+
+                </div>
+
+
+                <div class="instructors-grid">
+
+                    <div class="instructor-card">
+
+                        <div class="instructor-avatar">
+                            AM
+                        </div>
+
+                        <h3>
+                            Alex Morgan
+                        </h3>
+
+                        <span>
+                            Full Stack Developer
+                        </span>
+
+                        <div class="instructor-rating">
+                            ★ 4.9
+                        </div>
+
+                    </div>
+
+
+                    <div class="instructor-card">
+
+                        <div class="instructor-avatar">
+                            SJ
+                        </div>
+
+                        <h3>
+                            Sarah Johnson
+                        </h3>
+
+                        <span>
+                            UI/UX Designer
+                        </span>
+
+                        <div class="instructor-rating">
+                            ★ 4.9
+                        </div>
+
+                    </div>
+
+
+                    <div class="instructor-card">
+
+                        <div class="instructor-avatar">
+                            DK
+                        </div>
+
+                        <h3>
+                            Daniel Kim
+                        </h3>
+
+                        <span>
+                            Business Strategist
+                        </span>
+
+                        <div class="instructor-rating">
+                            ★ 4.8
+                        </div>
+
+                    </div>
+
+
+                    <div class="instructor-card">
+
+                        <div class="instructor-avatar">
+                            EM
+                        </div>
+
+                        <h3>
+                            Emma Miller
+                        </h3>
+
+                        <span>
+                            Digital Marketer
+                        </span>
+
+                        <div class="instructor-rating">
+                            ★ 4.9
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CTA
+        ========================== -->
+
+        <section class="cta-section">
+
+            <div class="container">
+
+                <div class="cta-box">
+
+                    <div class="cta-content">
+
+                        <span class="section-label">
+                            Start Today
+                        </span>
+
+                        <h2>
+                            Ready to Start
+                            Learning?
+                        </h2>
+
+                        <p>
+                            Join thousands of students already building
+                            better skills with Learnify.
+                        </p>
+
+                        <a
+                            href="user-panel/user-panel.html?register=true"
+                            class="btn btn-white btn-large"
+                        >
+                            Create Free Account →
+                        </a>
+
+                    </div>
+
+                    <div class="cta-decoration">
+                        <span>✦</span>
+                        <span>+</span>
+                        <span>✦</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="brand footer-logo"
+                >
+                    <span class="brand-icon">
+                        L
+                    </span>
+
+                    <span class="brand-text">
+                        Learn<span>ify</span>
+                    </span>
+                </a>
+
+                <p>
+                    Learn practical skills. Build your future.
+                    Grow without limits.
+                </p>
+
+                <div class="social-links">
+
+                    <a href="#" aria-label="Facebook">
+                        f
+                    </a>
+
+                    <a href="#" aria-label="Twitter">
+                        X
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        ◎
+                    </a>
+
+                    <a href="#" aria-label="LinkedIn">
+                        in
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Platform
+                </h3>
+
+                <a href="#courses">
+                    Courses
+                </a>
+
+                <a href="#categories">
+                    Categories
+                </a>
+
+                <a href="#instructors">
+                    Instructors
+                </a>
+
+                <a href="#services">
+                    Services
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Company
+                </h3>
+
+                <a href="#about">
+                    About Us
+                </a>
+
+                <a href="#">
+                    Contact
+                </a>
+
+                <a href="#">
+                    Careers
+                </a>
+
+                <a href="#">
+                    Blog
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Support
+                </h3>
+
+                <a href="#">
+                    Help Center
+                </a>
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Terms & Conditions
+                </a>
+
+                <a href="#">
+                    Refund Policy
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <p>
+                © <span id="currentYear"></span>
+                Learnify. All rights reserved.
+            </p>
+
+            <p>
+                Made for learners worldwide.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Main JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
