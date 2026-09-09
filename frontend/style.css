@@ -14,52 +14,8 @@
     --primary: #0f766e;
     --primary-light: #14b8a6;
     --primary-dark: #115e59;
-    --primary-soft: #ccfbf1;
+    --primary-soft: #134e4a;
 
-    --dark: #0f172a;
-    --dark-2: #1e293b;
-
-    --text: #334155;
-    --text-light: #64748b;
-    --text-muted: #94a3b8;
-
-    --white: #ffffff;
-    --background: #f8fafc;
-    --surface: #ffffff;
-    --surface-2: #f1f5f9;
-
-    --border: #e2e8f0;
-
-    --success: #10b981;
-    --warning: #f59e0b;
-    --danger: #ef4444;
-
-    --shadow-sm:
-        0 2px 8px rgba(15, 23, 42, 0.05);
-
-    --shadow:
-        0 10px 30px rgba(15, 23, 42, 0.08);
-
-    --shadow-lg:
-        0 20px 50px rgba(15, 23, 42, 0.12);
-
-    --radius-sm: 8px;
-    --radius: 14px;
-    --radius-lg: 22px;
-    --radius-xl: 30px;
-
-    --container: 1180px;
-
-    --transition:
-        0.25s ease;
-}
-
-
-/* =========================================================
-   2. DARK MODE VARIABLES
-   ========================================================= */
-
-body.dark-mode {
     --dark: #f8fafc;
     --dark-2: #e2e8f0;
 
@@ -74,7 +30,9 @@ body.dark-mode {
 
     --border: #263449;
 
-    --primary-soft: #134e4a;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
 
     --shadow-sm:
         0 2px 8px rgba(0, 0, 0, 0.25);
@@ -84,11 +42,20 @@ body.dark-mode {
 
     --shadow-lg:
         0 20px 50px rgba(0, 0, 0, 0.4);
+
+    --radius-sm: 8px;
+    --radius: 14px;
+    --radius-lg: 22px;
+    --radius-xl: 30px;
+
+    --container: 1180px;
+
+    --transition: 0.25s ease;
 }
 
 
 /* =========================================================
-   3. RESET
+   RESET
    ========================================================= */
 
 * {
@@ -109,9 +76,6 @@ body {
     color: var(--text);
     background: var(--background);
     overflow-x: hidden;
-    transition:
-        background-color var(--transition),
-        color var(--transition);
 }
 
 body,
