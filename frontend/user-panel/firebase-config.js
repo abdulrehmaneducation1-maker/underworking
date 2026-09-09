@@ -18,7 +18,9 @@ import { getStorage } from
 
 const firebaseConfig = {
     apiKey: "AIzaSyCgpGk9aHFdVeGoE2rwiUPPWSkfQmTvuIo",
-authDomain: "nextwavecommerce.site",
+    authDomain: "nextwave-commerce-project.firebaseapp.com",
+
+//authDomain: "nextwavecommerce.site",
     projectId: "nextwave-commerce-project",
     storageBucket: "nextwave-commerce-project.firebasestorage.app",
     messagingSenderId: "599878226058",
