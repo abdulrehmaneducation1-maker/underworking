@@ -9,10 +9,10 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
+ <title>NextWave Commerce</title>
+<link rel="icon" type="image/png" href="/frontend/assets/cccc.png" sizes="128x128">
+<link rel="apple-touch-icon" href="/frontend/assets/cccc.png">
 
-    <title>NextWave Commerce</title>
-<link rel="icon" type="image/png" href="../assets/cccc.png" sizes="128x128">
-<link rel="apple-touch-icon" href="../assets/cccc.png">
     <!-- =====================================================
          GOOGLE FONT
          ===================================================== -->
@@ -403,10 +403,10 @@
 
 
         /* =================================================
-           JAZZCASH METHOD
+           EASYPAISA METHOD
            ================================================= */
 
-        .jazzcash-method {
+        .easypaisa-method {
 
             display: flex;
 
@@ -426,7 +426,7 @@
         }
 
 
-        .jazzcash-logo {
+        .easypaisa-logo {
 
             width: 45px;
             height: 45px;
@@ -448,13 +448,13 @@
         }
 
 
-        .jazzcash-method-text {
+        .easypaisa-method-text {
 
             flex: 1;
         }
 
 
-        .jazzcash-method-text strong {
+        .easypaisa-method-text strong {
 
             display: block;
 
@@ -464,7 +464,7 @@
         }
 
 
-        .jazzcash-method-text span {
+        .easypaisa-method-text span {
 
             display: block;
 
@@ -1376,7 +1376,7 @@
             </h1>
 
             <p>
-                Pay securely with JazzCash and start your course.
+                Pay securely with EasyPaisa and start your course.
             </p>
 
         </div>
@@ -1405,11 +1405,11 @@
                     <div>
 
                         <h2>
-                            JazzCash Payment
+                            EasyPaisa Payment
                         </h2>
 
                         <p>
-                            Pay using your JazzCash mobile account.
+                            Pay using your EasyPaisa mobile account.
                         </p>
 
                     </div>
@@ -1418,21 +1418,21 @@
 
 
 
-                <!-- JAZZCASH ONLY -->
+                <!-- EASYPAISA ONLY -->
 
-                <div class="jazzcash-method">
+                <div class="easypaisa-method">
 
-                    <div class="jazzcash-logo">
+                    <div class="easypaisa-logo">
 
                         <i class="fa-solid fa-wallet"></i>
 
                     </div>
 
 
-                    <div class="jazzcash-method-text">
+                    <div class="easypaisa-method-text">
 
                         <strong>
-                            JazzCash
+                            EasyPaisa
                         </strong>
 
                         <span>
@@ -1464,8 +1464,8 @@
                         </strong>
 
                         <p>
-                            Enter your JazzCash mobile number and
-                            continue to the secure JazzCash payment
+                            Enter your EasyPaisa mobile number and
+                            continue to the secure EasyPaisa payment
                             process.
                         </p>
 
@@ -1479,9 +1479,9 @@
 
                 <div class="form-group">
 
-                    <label for="jazzcashNumber">
+                    <label for="easypaisaNumber">
 
-                        JazzCash Mobile Number
+                        EasyPaisa Mobile Number
 
                     </label>
 
@@ -1492,7 +1492,7 @@
 
                         <input
                             type="tel"
-                            id="jazzcashNumber"
+                            id="easypaisaNumber"
                             placeholder="03XXXXXXXXX"
                             maxlength="11"
                             autocomplete="tel"
@@ -1556,7 +1556,7 @@
                 >
 
                     <span id="payButtonText">
-                        Pay with JazzCash
+                        Pay with EasyPaisa
                     </span>
 
                     <i class="fa-solid fa-arrow-right"></i>
@@ -1916,8 +1916,8 @@
         const totalPrice =
             $("#totalPrice");
 
-        const jazzcashNumber =
-            $("#jazzcashNumber");
+        const easypaisaNumber =
+            $("#easypaisaNumber");
 
         const termsCheckbox =
             $("#termsCheckbox");
@@ -2374,12 +2374,12 @@
            PHONE FORMATTING
            ================================================= */
 
-        jazzcashNumber.addEventListener(
+        easypaisaNumber.addEventListener(
             "input",
             () => {
 
-                jazzcashNumber.value =
-                    jazzcashNumber.value
+                easypaisaNumber.value =
+                    easypaisaNumber.value
                         .replace(/\D/g, "")
                         .slice(0, 11);
 
@@ -2414,20 +2414,20 @@
            VALIDATE PHONE
            ================================================= */
 
-        function validateJazzCashNumber() {
+        function validateEasyPaisaNumber() {
 
             const number =
-                jazzcashNumber.value.trim();
+                easypaisaNumber.value.trim();
 
 
             if (!/^03[0-9]{9}$/.test(number)) {
 
                 showToast(
-                    "Enter a valid 11-digit JazzCash number.",
+                    "Enter a valid 11-digit EasyPaisa number.",
                     "error"
                 );
 
-                jazzcashNumber.focus();
+                easypaisaNumber.focus();
 
                 return false;
             }
@@ -2541,7 +2541,7 @@
                     amount,
 
                     paymentMethod:
-                        "JazzCash",
+                        "EasyPaisa",
 
                     paymentStatus:
                         "paid",
@@ -2558,10 +2558,10 @@
 
 
         /* =================================================
-           REAL JAZZCASH PAYMENT
+           REAL EASYPAISA PAYMENT
            ================================================= */
 
-        async function startJazzCashPayment() {
+        async function startEasyPaisaPayment() {
 
             if (!currentUser) {
 
@@ -2592,7 +2592,7 @@
             }
 
 
-            if (!validateJazzCashNumber()) {
+            if (!validateEasyPaisaNumber()) {
 
                 return;
             }
@@ -2645,7 +2645,7 @@
 
 
             payButtonText.textContent =
-                "Connecting to JazzCash...";
+                "Connecting to EasyPaisa...";
 
 
             try {
@@ -2653,21 +2653,21 @@
                 /*
                  * IMPORTANT:
                  *
-                 * Your real JazzCash merchant credentials
+                 * Your real EasyPaisa merchant credentials
                  * and secure payment signing MUST stay on
                  * your backend/server.
                  *
                  * This request expects your backend to:
                  *
-                 * 1. Create a JazzCash transaction
-                 * 2. Return the JazzCash payment URL/data
+                 * 1. Create an EasyPaisa transaction
+                 * 2. Return the EasyPaisa payment URL/data
                  * 3. Verify the transaction server-side
                  */
 
 
                 const response =
                     await fetch(
-                        "/api/jazzcash/create-payment",
+                        "/api/easypaisa/create-payment",
                         {
 
                             method: "POST",
@@ -2686,7 +2686,7 @@
                                     amount,
 
                                     mobileNumber:
-                                        jazzcashNumber.value,
+                                        easypaisaNumber.value,
 
                                     userId:
                                         currentUser.uid
@@ -2699,7 +2699,7 @@
                 if (!response.ok) {
 
                     throw new Error(
-                        "JazzCash payment service is unavailable."
+                        "EasyPaisa payment service is unavailable."
                     );
                 }
 
@@ -2728,7 +2728,7 @@
                      * Do NOT save the purchase here.
                      *
                      * Save it only after your backend confirms
-                     * the JazzCash transaction as PAID.
+                     * the EasyPaisa transaction as PAID.
                      */
 
                     window.location.href =
@@ -2740,20 +2740,20 @@
 
                 throw new Error(
                     result.message ||
-                    "Unable to start JazzCash payment."
+                    "Unable to start EasyPaisa payment."
                 );
 
             } catch (error) {
 
                 console.error(
-                    "JazzCash error:",
+                    "EasyPaisa error:",
                     error
                 );
 
 
                 showToast(
                     error.message ||
-                    "Unable to start JazzCash payment.",
+                    "Unable to start EasyPaisa payment.",
                     "error"
                 );
 
@@ -2762,7 +2762,7 @@
 
 
                 payButtonText.textContent =
-                    "Pay with JazzCash";
+                    "Pay with EasyPaisa";
             }
         }
 
@@ -2774,7 +2774,7 @@
 
         payButton.addEventListener(
             "click",
-            startJazzCashPayment
+            startEasyPaisaPayment
         );
 
 
